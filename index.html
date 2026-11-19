@@ -1,19 +1,1670 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LaptopScreenGuard — Your screen. Your space.</title><meta name="description" content="Webcam privacy for Windows. Explore four LaptopScreenGuard editions, download an installer, and meet creator Sanjeev Kumar."><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
-:root{--ink:#161719;--muted:#73767c;--orange:#f47621;--navy:#092647;--bg:#f5f5f7}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ff9a55;outline-offset:5px}nav{position:sticky;top:0;background:#ffffffdb;backdrop-filter:blur(20px);z-index:10;border-bottom:1px solid #e9e9eb}.nav{max-width:1160px;margin:auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}.brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;letter-spacing:-.6px}.brand img{width:42px;height:42px;object-fit:contain}.links{display:flex;align-items:center;gap:32px;font-size:14px}.pill{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:30px;padding:15px 25px;background:var(--navy);color:white;font-size:15px;font-weight:500;transition:transform .2s,background .2s}.pill:hover{background:#164575;transform:translateY(-2px)}.pill.orange{background:var(--orange)}.nav .pill{padding:10px 20px;font-size:13px}.link{color:#2167a8;font-size:16px}.link:hover{text-decoration:underline}.hero{text-align:center;overflow:hidden;background:linear-gradient(#fff 30%,#f4f4f6);padding:65px 24px 0}.eyebrow{font-size:14px;font-weight:600;color:var(--orange);letter-spacing:.1em;text-transform:uppercase}.hero h1{font-size:clamp(46px,6.2vw,88px);letter-spacing:-.065em;line-height:1.05;margin:20px 0 22px;font-weight:700}.hero h1 span{color:#85878d}.hero p{font-size:20px;line-height:1.6;color:#686b72;max-width:590px;margin:0 auto 24px}.actions{display:flex;gap:25px;align-items:center;justify-content:center}.compat{font-size:12px!important;margin-top:18px!important;color:#888!important}.product{max-width:1040px;margin:12px auto 0;position:relative}.product img{display:block;width:100%;mix-blend-mode:multiply}.product-label{position:absolute;left:50%;top:37%;transform:translate(-50%,-50%);color:white}.product-label strong{display:block;font-size:25px;letter-spacing:-1px}.product-label span{display:block;font-size:12px;color:#8d9198;margin-top:12px}.dot{width:7px;height:7px;background:var(--orange);display:inline-block;border-radius:50%;margin-right:6px}.featurebar{display:grid;grid-template-columns:repeat(3,1fr);max-width:1000px;margin:auto;padding:30px 0 40px;border-bottom:1px solid #eee;text-align:center;font-size:14px;color:#61646a}.featurebar b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}.wrap{max-width:1160px;margin:auto;padding:95px 24px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}h2{font-size:clamp(34px,4.1vw,55px);line-height:1.1;letter-spacing:-.055em;margin:0}h2 span{color:#8a8d93}.section-head p{max-width:350px;color:var(--muted);font-size:16px;line-height:1.7;margin:0}.demo{display:grid;grid-template-columns:1.1fr 1fr;background:var(--bg);border-radius:28px;overflow:hidden;align-items:center}.demo-visual{padding:50px 35px;background:#e9edf2;min-height:340px;display:grid;place-items:center}.monitor{width:100%;max-width:410px;aspect-ratio:1.6;border:11px solid #20262d;border-bottom-width:20px;border-radius:14px;background:radial-gradient(ellipse at 20% 90%,#84b5df,transparent 70%),linear-gradient(135deg,#123e70,#7f9ddc);box-shadow:0 25px 40px #0e213329;position:relative;transition:background .3s}.monitor:before{content:'';position:absolute;top:-8px;left:50%;width:5px;height:5px;background:#8b9aaa;border-radius:50%}.demo-screen{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:20px;transition:background .3s}.monitor.black .demo-screen{background:#000;color:#999;font-size:14px}.demo-copy{padding:45px}.demo-copy h3{font-size:28px;letter-spacing:-1px;margin:0 0 16px}.demo-copy p{color:var(--muted);line-height:1.7;font-size:16px}.switches{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 18px}.switches button{border:1px solid #d5d8df;background:white;border-radius:22px;padding:11px 17px;font-size:14px}.switches button[aria-pressed=true]{background:var(--navy);color:white;border-color:var(--navy)}.demo-note{font-size:12px!important;color:#85888e!important}.gray{background:var(--bg)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border-radius:24px;padding:30px 25px;display:flex;flex-direction:column;min-height:390px;transition:transform .25s}.card:hover{transform:translateY(-5px)}.symbol{width:55px;height:55px;display:grid;place-items:center;background:#fff0e4;border-radius:16px;color:var(--orange);font-size:28px;margin-bottom:35px}.card h3{font-size:23px;letter-spacing:-.8px;margin:0 0 15px}.card p{font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 25px}.card .download{margin-top:auto;color:#2167a8;font-size:14px;font-weight:600;padding-top:12px}.subnote{font-size:13px;line-height:1.7;color:#7c7f85;margin-top:25px;max-width:950px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:50px}.steps h3{font-size:23px;letter-spacing:-.8px}.steps p{font-size:16px;line-height:1.75;color:var(--muted)}.step-label{font-size:13px;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.08em}.shortcut{margin-top:45px;padding:25px 30px;background:var(--bg);border-radius:18px;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:15px}.keys{display:flex;gap:7px;align-items:center}kbd{font-family:inherit;border:1px solid #d3d6da;background:white;border-radius:7px;padding:10px 13px;box-shadow:0 2px 0 #d3d6da;font-size:14px}.creator{display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;background:var(--navy);border-radius:28px;overflow:hidden;color:white}.creator-mark{height:380px;display:grid;place-items:center;background:radial-gradient(ellipse at 40% 50%,#305070,#091d34)}.creator-mark span{font-size:110px;letter-spacing:-12px;font-weight:700;color:#fff}.creator-copy{padding:50px}.creator h2{font-size:42px}.creator .eyebrow{font-size:12px}.creator p{font-size:16px;line-height:1.8;color:#bac9d9}.creator .link{color:#ffb577}.faq{max-width:850px;margin:auto}.faq h2{text-align:center;margin-bottom:40px}details{border-bottom:1px solid #e3e4e7;padding:23px 0}summary{font-size:17px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}summary:after{content:'+';font-size:24px;font-weight:400;color:#777}details[open] summary:after{content:'−'}details p{color:var(--muted);font-size:15px;line-height:1.8;max-width:750px}.cta{text-align:center;background:var(--bg);padding:80px 24px}.cta h2{margin-bottom:24px}.cta p{color:var(--muted);font-size:16px;margin-bottom:26px}footer{padding:30px 24px;font-size:12px;color:#85878d;max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:20px}footer a{text-decoration:underline}.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}@media(max-width:850px){.cards{grid-template-columns:repeat(2,1fr)}.demo{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:22px}.links{gap:18px}.links .optional{display:none}.creator{grid-template-columns:1fr}.creator-mark{height:200px}.steps{gap:25px}.product-label strong{font-size:18px}.product-label span{font-size:10px}.hero{padding-top:55px}}@media(max-width:560px){.nav{height:65px;padding:0 16px}.brand{font-size:14px;gap:5px}.brand img{width:32px;height:32px}.links>a:not(.pill){display:none}.nav .pill{padding:10px 15px}.hero p{font-size:17px}.hero h1{font-size:49px}.actions{gap:20px}.product{margin-top:35px;width:120%;margin-left:-10%}.product-label strong{font-size:14px}.product-label span{font-size:8px}.featurebar{padding:25px 12px;font-size:11px}.featurebar b{font-size:13px}.wrap{padding:65px 20px}.cards{grid-template-columns:1fr}.card{min-height:290px}.symbol{margin-bottom:22px}.steps{grid-template-columns:1fr;gap:15px}.shortcut{flex-direction:column;align-items:flex-start}.creator-copy{padding:35px 25px}.creator h2{font-size:36px}.demo-copy{padding:30px 25px}.demo-visual{min-height:270px;padding:40px 20px}.creator-mark span{font-size:90px}footer{flex-direction:column}.section-head{margin-bottom:30px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.reveal{opacity:1;transform:none}}
-</style></head><body>
-<nav><div class="nav"><a href="#" class="brand" aria-label="LaptopScreenGuard home"><img src="assets/laptop-shield-logo.png" alt="LaptopScreenGuard laptop and shield logo">LaptopScreenGuard</a><div class="links"><a href="#experience" class="optional">How it works</a><a href="#setup" class="optional">Setup</a><a href="https://isanjiiv.github.io/" target="_blank" rel="noopener">The creator</a><a href="#downloads" class="pill">Download</a></div></div></nav>
-<main><section class="hero"><div class="eyebrow">Webcam privacy for Windows</div><h1>Your screen.<br><span>Your space.</span></h1><p>A little more privacy, right when you need it.<br>LaptopScreenGuard covers your display when your selected webcam trigger is detected.</p><div class="actions"><a href="#downloads" class="pill orange">Find your edition</a><a href="#experience" class="link">Explore how it works</a></div><p class="compat">Windows 10 / 11 x64 · Python 3.12 · Preview build</p><div class="product"><img src="assets/laptop.png" alt="Graphite laptop with a completely black display, illustrating the privacy overlay" fetchpriority="high"><div class="product-label"><strong>Privacy, on display.</strong><span><i class="dot"></i>Black overlay illustration</span></div></div></section>
-<div class="featurebar"><div><b>On your laptop.</b>Webcam processing stays local.</div><div><b>Four ways to guard.</b>Choose the trigger you need.</div><div><b>Ready after sign-in.</b>Runs in the background.</div></div>
-<section class="wrap" id="experience"><div class="section-head reveal"><h2>A moment changes.<br><span>Your screen responds.</span></h2><p>Choose a trigger. The app displays a black overlay while the condition is active, then restores your screen when it clears.</p></div><div class="demo reveal"><div class="demo-visual"><div class="monitor" id="monitor"><div class="demo-screen" id="demo-screen" aria-live="polite">Your workspace</div></div></div><div class="demo-copy"><h3>See the idea in action.</h3><p id="demo-description">With no trigger active, your workspace stays visible.</p><div class="switches" aria-label="Illustration controls"><button aria-pressed="true" data-state="normal">Normal</button><button aria-pressed="false" data-state="phone">Phone detected</button><button aria-pressed="false" data-state="away">Owner away</button></div><p class="demo-note">Interactive illustration. This page does not access your camera. Actual detection speed depends on your laptop and webcam.</p></div></div></section>
-<section class="gray" id="downloads"><div class="wrap"><div class="section-head reveal"><h2>One app.<br><span>Your kind of privacy.</span></h2><p>Four standalone editions. Each download includes the app, installer, removal script, and a step-by-step guide.</p></div><div class="cards">
-<article class="card reveal"><div class="symbol" aria-hidden="true">▯</div><h3>Phone Only</h3><p>Shows a black overlay when a mobile phone is detected in your webcam’s view.</p><a class="download" href="downloads/LaptopScreenGuard-01-Phone-Only.zip" download>Download Phone Only</a></article>
-<article class="card reveal"><div class="symbol" aria-hidden="true">◉</div><h3>Phone + Shutter</h3><p>Adds checks for dark, uniform, or missing webcam feed, including shutter-like changes.</p><a class="download" href="downloads/LaptopScreenGuard-02-Phone-and-Shutter.zip" download>Download Phone + Shutter</a></article>
-<article class="card reveal"><div class="symbol" aria-hidden="true">◌</div><h3>Phone + Cover</h3><p>Includes phone and shutter checks, plus blurred, low-detail images from a close lens cover.</p><a class="download" href="downloads/LaptopScreenGuard-03-Phone-Shutter-and-Cover.zip" download>Download Phone + Cover</a></article>
-<article class="card reveal"><div class="symbol" aria-hidden="true">◎</div><h3>Face Only</h3><p>Hides the display after about two seconds without a match to your enrolled face. Return alone to restore it.</p><a class="download" href="downloads/LaptopScreenGuard-04-Face-Only.zip" download>Download Face Only</a></article></div><p class="subnote">Windows 10/11 x64 and Python 3.12 x64 required. Install one edition per account at a time. Webcam conditions can affect detection. Keyboard and mouse input blocking is attempted while the overlay is active; test input restoration on your own laptop.</p></div></section>
-<section class="wrap" id="setup"><div class="section-head reveal"><h2>From download<br><span>to a quieter screen.</span></h2><a class="link" href="README.md">Read the full setup guide</a></div><div class="steps"><div class="reveal"><span class="step-label">Download</span><h3>Pick your edition.</h3><p>Install Python 3.12 x64, then download and extract one ZIP. Exit older webcam privacy apps before setup.</p></div><div class="reveal"><span class="step-label">Install</span><h3>One setup script.</h3><p>Run <strong>Install-LaptopScreenGuard.cmd</strong>. Keep internet connected for the initial packages and model downloads.</p></div><div class="reveal"><span class="step-label">Personalize</span><h3>Make it yours.</h3><p>For Face Only, choose <strong>Enroll My Face</strong> from the tray menu. Set your app PIN and look at the camera. Use <strong>Replace Enrolled Face</strong> to update it.</p></div></div><div class="shortcut"><span>A shortcut when you need control.<br><small>Pause or resume monitoring, including under the overlay.</small></span><div class="keys"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd></div></div></section>
-<section class="wrap" style="padding-top:0" id="creator"><div class="creator reveal"><div class="creator-mark" aria-hidden="true"><span>SK<span style="color:#f47621;font-size:inherit">.</span></span></div><div class="creator-copy"><div class="eyebrow">Created by</div><h2>Sanjeev Kumar.</h2><p>An IT Engineer based in Noida, working across Windows Server administration, networking, cloud infrastructure, Fortinet firewalls, and cybersecurity.</p><a href="https://isanjiiv.github.io/" class="link" target="_blank" rel="noopener">Meet the creator</a></div></div></section>
-<section class="wrap" style="padding-top:0"><div class="faq"><h2>Good to know.</h2><details><summary>Does it work offline?</summary><p>Yes. Installation downloads the packages and detection models. After setup, webcam processing runs on your laptop. The app does not save webcam photos.</p></details><details><summary>What happens when I close the shutter?</summary><p>Phone + Shutter and Phone + Cover may activate on a dark, uniform, or missing feed. In Face Only, a closed shutter hides the enrolled face and triggers the same two-second absence rule.</p></details><details><summary>Does it secure my Windows account?</summary><p>The app adds a visual privacy overlay. Webcam matching can be fooled by a photo or video. Use Windows + L when leaving your laptop to secure the Windows session.</p></details><details><summary>Will it start automatically?</summary><p>The installer creates a startup entry for the Windows account that installs it. Sign out and back in to verify it starts. Each account requires its own setup.</p></details><details><summary>How do I recover or uninstall?</summary><p>Use Ctrl + Shift + F12 to pause monitoring. Ctrl + Alt + Delete opens Windows security options if needed. To remove the app, exit from the tray and run Uninstall-LaptopScreenGuard.cmd in your extracted edition folder.</p></details><details><summary>What should I test before using it?</summary><p>This is a preview build. Test your edition’s triggers, face matching where applicable, keyboard and mouse recovery, startup, and CPU usage on the target laptop. Lighting, partial lens covers, and camera availability can affect results.</p></details></div></section>
-<section class="cta"><h2>A little privacy.<br>A little peace of mind.</h2><p>Choose the edition that fits your workspace.</p><a class="pill orange" href="#downloads">Download LaptopScreenGuard</a></section></main>
-<footer><span>© <span id="year"></span> LaptopScreenGuard · Created by <a href="https://isanjiiv.github.io/">Sanjeev Kumar</a></span><span><a href="https://github.com/isanjiiv/PhoneScreenGuard" target="_blank" rel="noopener">GitHub repository</a> · <a href="README.md">Setup guide</a></span></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();const monitor=document.getElementById('monitor'),screen=document.getElementById('demo-screen'),description=document.getElementById('demo-description');document.querySelectorAll('[data-state]').forEach(button=>button.addEventListener('click',()=>{const state=button.dataset.state;document.querySelectorAll('[data-state]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));monitor.classList.toggle('black',state!=='normal');screen.textContent=state==='normal'?'Your workspace':'Black overlay active';description.textContent=state==='normal'?'With no trigger active, your workspace stays visible.':state==='phone'?'A detected phone activates the overlay in the three phone editions. Clear the trigger to restore the screen.':'In Face Only, about two seconds without an owner match activates the overlay. Return alone and match to restore it.'}));const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LaptopScreenGuard | Webcam Screen Privacy for Windows</title>
+
+  <meta
+    name="description"
+    content="LaptopScreenGuard adds webcam-triggered screen privacy to Windows 10 and 11. Explore phone detection, shutter, lens cover and enrolled-face editions by Sanjeev Kumar."
+  >
+  <meta name="author" content="Sanjeev Kumar">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#092647">
+
+  <!-- Add your final production URL as a canonical link after deployment. -->
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LaptopScreenGuard">
+  <meta
+    property="og:title"
+    content="LaptopScreenGuard | Webcam Screen Privacy for Windows"
+  >
+  <meta
+    property="og:description"
+    content="Explore four Windows webcam privacy editions: phone detection, shutter, lens cover and enrolled-face monitoring. Created by Sanjeev Kumar."
+  >
+  <meta
+    property="og:image"
+    content="https://isanjiiv.github.io/assets/images/sanjeev-it-engineer.png"
+  >
+  <meta
+    property="og:image:alt"
+    content="Sanjeev Kumar, creator of LaptopScreenGuard"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="LaptopScreenGuard | Webcam Screen Privacy for Windows"
+  >
+  <meta
+    name="twitter:description"
+    content="Four webcam-triggered screen privacy editions for Windows, created by Sanjeev Kumar."
+  >
+  <meta
+    name="twitter:image"
+    content="https://isanjiiv.github.io/assets/images/sanjeev-it-engineer.png"
+  >
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Structured information for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LaptopScreenGuard",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "description": "Webcam-triggered visual privacy overlay for Windows with phone, shutter, lens cover and enrolled-face editions.",
+    "author": {
+      "@type": "Person",
+      "name": "Sanjeev Kumar",
+      "url": "https://isanjiiv.github.io/",
+      "image": "https://isanjiiv.github.io/assets/images/sanjeev-it-engineer.png",
+      "jobTitle": "IT Engineer"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #161719;
+      --muted: #62666d;
+      --orange: #f47621;
+      --navy: #092647;
+      --background: #f5f5f7;
+      --blue: #2167a8;
+      --border: #e3e4e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #ff9a55;
+      outline-offset: 5px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 100;
+      padding: 12px 18px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--navy);
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: none;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e9e9eb;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1160px;
+      height: 74px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 15px 25px;
+      border: 0;
+      border-radius: 30px;
+      color: #fff;
+      background: var(--navy);
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .pill:hover {
+      background: #164575;
+      transform: translateY(-2px);
+    }
+
+    .pill.orange {
+      background: #c45109;
+    }
+
+    .pill.orange:hover {
+      background: #a94106;
+    }
+
+    .nav .pill {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+
+    .link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      color: var(--blue);
+      font-size: 16px;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+
+    .hero {
+      overflow: hidden;
+      padding: 65px 24px 0;
+      background: linear-gradient(#fff 30%, #f4f4f6);
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #b74808;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 20px 0 22px;
+      font-size: clamp(46px, 6.2vw, 88px);
+      font-weight: 700;
+      letter-spacing: -0.065em;
+      line-height: 1.05;
+    }
+
+    .hero h1 .soft {
+      color: #777a80;
+    }
+
+    .hero p {
+      max-width: 590px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .hero .compat {
+      margin-top: 18px;
+      color: #62666d;
+      font-size: 12px;
+    }
+
+    .product {
+      position: relative;
+      max-width: 1040px;
+      margin: 12px auto 0;
+    }
+
+    .product img {
+      display: block;
+      width: 100%;
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .product-label {
+      position: absolute;
+      top: 37%;
+      left: 50%;
+      color: #fff;
+      transform: translate(-50%, -50%);
+    }
+
+    .product-label strong {
+      display: block;
+      font-size: 25px;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .product-label span {
+      display: block;
+      margin-top: 12px;
+      color: #b5b9c0;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .featurebar {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px 40px;
+      border-bottom: 1px solid #eee;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .featurebar b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    /* Shared sections */
+
+    .wrap {
+      max-width: 1160px;
+      margin: auto;
+      padding: 95px 24px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 4.1vw, 55px);
+      line-height: 1.1;
+      letter-spacing: -0.055em;
+    }
+
+    h2 span {
+      color: #777a80;
+    }
+
+    .section-head p {
+      max-width: 350px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .gray {
+      background: var(--background);
+    }
+
+    /* Interactive illustration */
+
+    .demo {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--background);
+    }
+
+    .demo-visual {
+      display: grid;
+      min-height: 340px;
+      padding: 50px 35px;
+      background: #e9edf2;
+      place-items: center;
+    }
+
+    .monitor {
+      position: relative;
+      width: 100%;
+      max-width: 410px;
+      aspect-ratio: 1.6;
+      border: 11px solid #20262d;
+      border-bottom-width: 20px;
+      border-radius: 14px;
+      background:
+        radial-gradient(
+          ellipse at 20% 90%,
+          #84b5df,
+          transparent 70%
+        ),
+        linear-gradient(135deg, #123e70, #7f9ddc);
+      box-shadow: 0 25px 40px #0e213329;
+    }
+
+    .monitor::before {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #8b9aaa;
+      content: "";
+    }
+
+    .demo-screen {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      place-items: center;
+      transition: background 0.3s;
+    }
+
+    .monitor.black .demo-screen {
+      color: #aaa;
+      background: #000;
+      font-size: 14px;
+    }
+
+    .demo-copy {
+      min-width: 0;
+      padding: 45px;
+    }
+
+    .demo-copy h3 {
+      margin: 0 0 16px;
+      font-size: 28px;
+      letter-spacing: -1px;
+    }
+
+    .demo-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .switches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 18px;
+    }
+
+    .switches button {
+      min-height: 44px;
+      padding: 11px 17px;
+      border: 1px solid #d5d8df;
+      border-radius: 22px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .switches button[aria-pressed="true"] {
+      border-color: var(--navy);
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .demo-copy .demo-note {
+      font-size: 12px;
+    }
+
+    /* Download editions */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 390px;
+      padding: 30px 25px;
+      border-radius: 24px;
+      background: #fff;
+      transition: transform 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .symbol {
+      display: grid;
+      width: 55px;
+      height: 55px;
+      margin-bottom: 35px;
+      border-radius: 16px;
+      color: #b74808;
+      background: #fff0e4;
+      font-size: 28px;
+      place-items: center;
+    }
+
+    .card h3 {
+      margin: 0 0 15px;
+      font-size: 23px;
+      letter-spacing: -0.8px;
+    }
+
+    .card p {
+      margin: 0 0 25px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .card .download {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      margin-top: auto;
+      padding-top: 12px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .download:hover {
+      text-decoration: underline;
+    }
+
+    .subnote {
+      max-width: 950px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* Setup */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 50px;
+      margin-top: 50px;
+    }
+
+    .steps > div {
+      min-width: 0;
+    }
+
+    .steps h3 {
+      font-size: 23px;
+      letter-spacing: -0.8px;
+    }
+
+    .steps p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-wrap: anywhere;
+    }
+
+    .step-label {
+      color: #b74808;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .shortcut {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 45px;
+      padding: 25px 30px;
+      border-radius: 18px;
+      background: var(--background);
+      font-size: 15px;
+    }
+
+    .shortcut small {
+      display: inline-block;
+      margin-top: 6px;
+      color: var(--muted);
+    }
+
+    .keys {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+    }
+
+    kbd {
+      padding: 10px 13px;
+      border: 1px solid #d3d6da;
+      border-radius: 7px;
+      background: #fff;
+      box-shadow: 0 2px 0 #d3d6da;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    /* Creator */
+
+    .creator-section {
+      padding-top: 0;
+    }
+
+    .creator {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 28px;
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .creator-mark {
+      display: grid;
+      align-self: stretch;
+      min-height: 380px;
+      padding: 30px;
+      background:
+        radial-gradient(
+          ellipse at 40% 50%,
+          #305070,
+          #091d34
+        );
+      place-items: center;
+    }
+
+    .creator-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      border-radius: 20px;
+      object-fit: contain;
+    }
+
+    .creator-copy {
+      min-width: 0;
+      padding: 50px;
+    }
+
+    .creator h2 {
+      font-size: 42px;
+    }
+
+    .creator .eyebrow {
+      color: #ffad73;
+      font-size: 12px;
+    }
+
+    .creator p {
+      color: #bac9d9;
+      font-size: 16px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    .creator .link {
+      color: #ffb577;
+    }
+
+    /* FAQ */
+
+    .faq-section {
+      padding-top: 0;
+    }
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq h2 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    details {
+      padding: 23px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 44px;
+      font-size: 17px;
+      font-weight: 500;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      flex-shrink: 0;
+      color: #62666d;
+      font-size: 24px;
+      font-weight: 400;
+      content: "+";
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      max-width: 750px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* Closing section and footer */
+
+    .cta {
+      padding: 80px 24px;
+      background: var(--background);
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin-bottom: 24px;
+    }
+
+    .cta p {
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1160px;
+      margin: auto;
+      padding: 30px 24px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    footer a {
+      text-decoration: underline;
+    }
+
+    /* Content remains visible without JavaScript. */
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Tablet */
+
+    @media (max-width: 1000px) {
+      .links {
+        gap: 18px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 850px) {
+      .demo {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 22px;
+      }
+
+      .section-head > .link {
+        margin-top: 20px;
+      }
+
+      .links .optional {
+        display: none;
+      }
+
+      .creator {
+        grid-template-columns: 1fr;
+      }
+
+      .creator-mark {
+        min-height: 0;
+        padding: 28px;
+      }
+
+      .creator-photo {
+        max-width: 360px;
+        max-height: 320px;
+        margin: auto;
+      }
+
+      .steps {
+        gap: 25px;
+      }
+
+      .product-label strong {
+        font-size: 18px;
+      }
+
+      .product-label span {
+        font-size: 10px;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+    }
+
+    /* Mobile */
+
+    @media (max-width: 560px) {
+      html {
+        scroll-padding-top: 80px;
+      }
+
+      .nav {
+        height: 65px;
+        gap: 8px;
+        padding: 0 16px;
+      }
+
+      .brand {
+        gap: 5px;
+        font-size: clamp(11px, 3.4vw, 14px);
+        letter-spacing: -0.4px;
+      }
+
+      .brand img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .links {
+        gap: 0;
+      }
+
+      .links > a:not(.pill) {
+        display: none;
+      }
+
+      .nav .pill {
+        padding: 10px 12px;
+      }
+
+      .hero {
+        padding-right: 16px;
+        padding-left: 16px;
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 10vw, 49px);
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .hero p br {
+        display: none;
+      }
+
+      .actions {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .product {
+        width: 100%;
+        margin-top: 35px;
+      }
+
+      .product-label strong {
+        font-size: clamp(11px, 3.5vw, 16px);
+      }
+
+      .product-label span {
+        margin-top: 7px;
+        font-size: 9px;
+      }
+
+      .featurebar {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 26px 20px;
+        font-size: 14px;
+      }
+
+      .featurebar b {
+        font-size: 14px;
+      }
+
+      .wrap {
+        padding: 65px 16px;
+      }
+
+      .section-head {
+        margin-bottom: 30px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 290px;
+      }
+
+      .symbol {
+        margin-bottom: 22px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .shortcut {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+      }
+
+      .keys {
+        gap: 5px;
+      }
+
+      kbd {
+        padding: 9px 10px;
+      }
+
+      .creator-section,
+      .faq-section {
+        padding-top: 0;
+      }
+
+      .creator-copy {
+        padding: 28px 22px;
+      }
+
+      .creator h2 {
+        font-size: clamp(28px, 8vw, 36px);
+      }
+
+      .creator-mark {
+        padding: 24px 24px 0;
+      }
+
+      .creator-photo {
+        max-height: 280px;
+      }
+
+      .demo-copy {
+        padding: 30px 25px;
+      }
+
+      .demo-copy h3 {
+        font-size: 25px;
+      }
+
+      .demo-visual {
+        min-height: 270px;
+        padding: 40px 20px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to content
+  </a>
+
+  <nav aria-label="Main navigation">
+    <div class="nav">
+      <a
+        href="#main-content"
+        class="brand"
+        aria-label="LaptopScreenGuard home"
+      >
+        <img
+          src="assets/laptop-shield-logo.png"
+          alt=""
+          width="42"
+          height="42"
+        >
+        LaptopScreenGuard
+      </a>
+
+      <div class="links">
+        <a href="#experience" class="optional">
+          How it works
+        </a>
+
+        <a href="#setup" class="optional">
+          Setup
+        </a>
+
+        <a
+            href="https://isanjiiv.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+          The creator
+        </a>
+
+        <a href="#downloads" class="pill">
+          Download
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="eyebrow">
+        Webcam privacy for Windows
+      </div>
+
+      <h1 id="hero-title">
+        <span class="sr-only">
+          LaptopScreenGuard — Webcam Screen Privacy for Windows.
+        </span>
+        Your screen.<br>
+        <span class="soft">Your space.</span>
+      </h1>
+
+      <p>
+        A little more privacy, right when you need it.<br>
+        LaptopScreenGuard covers your display when your selected
+        webcam trigger is detected.
+      </p>
+
+      <div class="actions">
+        <a href="#downloads" class="pill orange">
+          Find your edition
+        </a>
+
+        <a href="#experience" class="link">
+          Explore how it works
+        </a>
+      </div>
+
+      <p class="compat">
+        Windows 10 / 11 x64 · Python 3.12 · Preview build
+      </p>
+
+      <div class="product">
+        <img
+            src="assets/laptop.png"
+            alt="Graphite laptop with a black display illustrating the LaptopScreenGuard privacy overlay"
+            fetchpriority="high"
+            decoding="async"
+        >
+
+        <div class="product-label" aria-hidden="true">
+          <strong>Privacy, on display.</strong>
+
+          <span>
+            <i class="dot"></i>
+            Black overlay illustration
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <div class="featurebar" aria-label="Product highlights">
+      <div>
+        <b>On your laptop.</b>
+        Webcam processing stays local.
+      </div>
+
+      <div>
+        <b>Four ways to guard.</b>
+        Choose the trigger you need.
+      </div>
+
+      <div>
+        <b>Ready after sign-in.</b>
+        Runs in the background.
+      </div>
+    </div>
+
+    <section
+        class="wrap"
+        id="experience"
+        aria-labelledby="experience-title"
+    >
+      <div class="section-head">
+        <h2 id="experience-title">
+          A moment changes.<br>
+          <span>Your screen responds.</span>
+        </h2>
+
+        <p>
+          Choose a trigger. The app displays a black overlay while
+          the condition is active, then restores your screen when
+          it clears.
+        </p>
+      </div>
+
+      <div class="demo">
+        <div class="demo-visual">
+          <div class="monitor" id="monitor">
+            <div
+                class="demo-screen"
+                id="demo-screen"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+              Your workspace
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-copy">
+          <h3>See the idea in action.</h3>
+
+          <p id="demo-description">
+            With no trigger active, your workspace stays visible.
+          </p>
+
+          <div
+              class="switches"
+              role="group"
+              aria-label="Privacy illustration controls"
+          >
+            <button
+                type="button"
+                aria-pressed="true"
+                data-state="normal"
+            >
+              Normal
+            </button>
+
+            <button
+                type="button"
+                aria-pressed="false"
+                data-state="phone"
+            >
+              Phone detected
+            </button>
+
+            <button
+                type="button"
+                aria-pressed="false"
+                data-state="away"
+            >
+              Owner away
+            </button>
+          </div>
+
+          <p class="demo-note">
+            Interactive illustration. This page does not access
+            your camera. Actual detection speed depends on your
+            laptop and webcam.
+          </p>
+
+          <noscript>
+            <p class="demo-note">
+              Enable JavaScript to use the illustration controls.
+              Downloads and setup information remain available.
+            </p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <section
+        class="gray"
+        id="downloads"
+        aria-labelledby="downloads-title"
+    >
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="downloads-title">
+            One app.<br>
+            <span>Your kind of privacy.</span>
+          </h2>
+
+          <p>
+            Four standalone editions. Each download includes
+            the app, installer, removal script, and a step-by-step
+            guide.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="symbol" aria-hidden="true">▯</div>
+
+            <h3>Phone Only</h3>
+
+            <p>
+              Shows a black overlay when a mobile phone is
+              detected in your webcam’s view.
+            </p>
+
+            <a
+                class="download"
+                href="downloads/LaptopScreenGuard-01-Phone-Only.zip"
+                download
+            >
+              Download Phone Only
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="symbol" aria-hidden="true">◉</div>
+
+            <h3>Phone + Shutter</h3>
+
+            <p>
+              Adds checks for a dark, uniform, or missing webcam
+              feed, including shutter-like changes.
+            </p>
+
+            <a
+                class="download"
+                href="downloads/LaptopScreenGuard-02-Phone-and-Shutter.zip"
+                download
+            >
+              Download Phone + Shutter
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="symbol" aria-hidden="true">◌</div>
+
+            <h3>Phone + Cover</h3>
+
+            <p>
+              Includes phone and shutter checks, plus blurred,
+              low-detail images from a close lens cover.
+            </p>
+
+            <a
+                class="download"
+                href="downloads/LaptopScreenGuard-03-Phone-Shutter-and-Cover.zip"
+                download
+            >
+              Download Phone + Cover
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="symbol" aria-hidden="true">◎</div>
+
+            <h3>Face Only</h3>
+
+            <p>
+              Hides the display after about two seconds without
+              a match to your enrolled face. Return alone to
+              restore it.
+            </p>
+
+            <a
+                class="download"
+                href="downloads/LaptopScreenGuard-04-Face-Only.zip"
+                download
+            >
+              Download Face Only
+            </a>
+          </article>
+        </div>
+
+        <p class="subnote">
+          Windows 10/11 x64 and Python 3.12 x64 required.
+          Install one edition per account at a time.
+          Webcam conditions can affect detection. Keyboard and
+          mouse input blocking is attempted while the overlay is
+          active; test input restoration on your own laptop.
+        </p>
+      </div>
+    </section>
+
+    <section
+        class="wrap"
+        id="setup"
+        aria-labelledby="setup-title"
+    >
+      <div class="section-head">
+        <h2 id="setup-title">
+          From download<br>
+          <span>to a quieter screen.</span>
+        </h2>
+
+        <a
+            class="link"
+            href="https://github.com/isanjiiv/LaptopScreenGuard#readme"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+          Read the full setup guide
+        </a>
+      </div>
+
+      <div class="steps">
+        <div>
+          <span class="step-label">Download</span>
+
+          <h3>Pick your edition.</h3>
+
+          <p>
+            Install Python 3.12 x64, then download and extract
+            one ZIP. Exit older webcam privacy apps before setup.
+          </p>
+        </div>
+
+        <div>
+          <span class="step-label">Install</span>
+
+          <h3>One setup script.</h3>
+
+          <p>
+            Run <strong>Install-LaptopScreenGuard.cmd</strong>.
+            Keep internet connected for the initial packages and
+            model downloads.
+          </p>
+        </div>
+
+        <div>
+          <span class="step-label">Personalize</span>
+
+          <h3>Make it yours.</h3>
+
+          <p>
+            For Face Only, choose <strong>Enroll My Face</strong>
+            from the tray menu. Set your app PIN and look at
+            the camera. Use <strong>Replace Enrolled Face</strong>
+            to update it.
+          </p>
+        </div>
+      </div>
+
+      <div class="shortcut">
+        <div>
+          A shortcut when you need control.<br>
+
+          <small>
+            Pause or resume monitoring, including under the overlay.
+          </small>
+        </div>
+
+        <div
+            class="keys"
+            aria-label="Control plus Shift plus F12"
+        >
+          <kbd>Ctrl</kbd>
+          <span aria-hidden="true">+</span>
+          <kbd>Shift</kbd>
+          <span aria-hidden="true">+</span>
+          <kbd>F12</kbd>
+        </div>
+      </div>
+    </section>
+
+    <section
+        class="wrap creator-section"
+        id="creator"
+        aria-labelledby="creator-title"
+    >
+      <div class="creator">
+        <div class="creator-mark">
+          <img
+              class="creator-photo"
+              src="https://isanjiiv.github.io/assets/images/sanjeev-it-engineer.png"
+              alt="Sanjeev Kumar, IT Engineer and creator of LaptopScreenGuard"
+              width="640"
+              height="640"
+              loading="lazy"
+              decoding="async"
+          >
+        </div>
+
+        <div class="creator-copy">
+          <div class="eyebrow">Created by</div>
+
+          <h2 id="creator-title">Sanjeev Kumar.</h2>
+
+          <p>
+            An IT Engineer based in Noida, working across
+            Windows Server administration, networking, cloud
+            infrastructure, Fortinet firewalls, and cybersecurity.
+          </p>
+
+          <a
+              href="https://isanjiiv.github.io/"
+              class="link"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            Meet the creator
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+        class="wrap faq-section"
+        aria-labelledby="faq-title"
+    >
+      <div class="faq">
+        <h2 id="faq-title">Good to know.</h2>
+
+        <details>
+          <summary>Does it work offline?</summary>
+
+          <p>
+            Yes. Installation downloads the packages and
+            detection models. After setup, webcam processing
+            runs on your laptop. The app does not save webcam
+            photos.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            What happens when I close the shutter?
+          </summary>
+
+          <p>
+            Phone + Shutter and Phone + Cover may activate
+            on a dark, uniform, or missing feed. In Face Only,
+            a closed shutter hides the enrolled face and
+            triggers the same two-second absence rule.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            Does it secure my Windows account?
+          </summary>
+
+          <p>
+            The app adds a visual privacy overlay. Webcam
+            matching can be fooled by a photo or video.
+            Use Windows + L when leaving your laptop to
+            secure the Windows session.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will it start automatically?</summary>
+
+          <p>
+            The installer creates a startup entry for the
+            Windows account that installs it. Sign out and
+            back in to verify it starts. Each account
+            requires its own setup.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I recover or uninstall?</summary>
+
+          <p>
+            Use Ctrl + Shift + F12 to pause monitoring.
+            Ctrl + Alt + Delete opens Windows security
+            options if needed. To remove the app, exit from
+            the tray and run Uninstall-LaptopScreenGuard.cmd
+            in your extracted edition folder.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            What should I test before using it?
+          </summary>
+
+          <p>
+            This is a preview build. Test your edition’s
+            triggers, face matching where applicable,
+            keyboard and mouse recovery, startup, and CPU
+            usage on the target laptop. Lighting, partial
+            lens covers, and camera availability can
+            affect results.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">
+        A little privacy.<br>
+        A little peace of mind.
+      </h2>
+
+      <p>Choose the edition that fits your workspace.</p>
+
+      <a class="pill orange" href="#downloads">
+        Download LaptopScreenGuard
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <span>
+      © <span id="year">2026</span> LaptopScreenGuard ·
+      Created by
+      <a href="https://isanjiiv.github.io/">
+        Sanjeev Kumar
+      </a>
+    </span>
+
+    <span>
+      <a
+          href="https://github.com/isanjiiv/LaptopScreenGuard"
+          target="_blank"
+          rel="noopener noreferrer"
+      >
+        GitHub repository
+      </a>
+      ·
+      <a
+          href="https://github.com/isanjiiv/LaptopScreenGuard#readme"
+          target="_blank"
+          rel="noopener noreferrer"
+      >
+        Setup guide
+      </a>
+    </span>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Keep the copyright year current.
+    const year = document.getElementById("year");
+
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+
+    // Illustration only. No webcam access is requested.
+    const monitor = document.getElementById("monitor");
+    const demoScreen = document.getElementById("demo-screen");
+    const description = document.getElementById("demo-description");
+    const controls = document.querySelectorAll("[data-state]");
+
+    const demoStates = {
+      normal: {
+        screen: "Your workspace",
+        description:
+          "With no trigger active, your workspace stays visible.",
+        black: false
+      },
+
+      phone: {
+        screen: "Black overlay active",
+        description:
+          "A detected phone activates the overlay in the three phone editions. Clear the trigger to restore the screen.",
+        black: true
+      },
+
+      away: {
+        screen: "Black overlay active",
+        description:
+          "In Face Only, about two seconds without an owner match activates the overlay. Return alone and match to restore it.",
+        black: true
+      }
+    };
+
+    controls.forEach((button) => {
+      button.addEventListener("click", () => {
+        const state = demoStates[button.dataset.state];
+
+        if (!state || !monitor || !demoScreen || !description) {
+          return;
+        }
+
+        controls.forEach((control) => {
+          control.setAttribute(
+            "aria-pressed",
+            String(control === button)
+          );
+        });
+
+        monitor.classList.toggle("black", state.black);
+        demoScreen.textContent = state.screen;
+        description.textContent = state.description;
+      });
+    });
+  </script>
+</body>
+</html>
