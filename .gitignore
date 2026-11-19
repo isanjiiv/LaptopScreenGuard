@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+venv/
+*.log
+*.lock
+*.onnx
+*.pt
+owner-face.npz
