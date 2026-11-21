@@ -66,7 +66,6 @@ https://laptopscreenguard.vercel.app/
 - ⚙️ Background monitoring and per-account automatic startup.
 - 📴 Offline monitoring after initial setup.
 - ⌨️ Pause/resume keyboard shortcut.
-- 🔄 Update script for existing installations.
 - 📦 Separate installation packages for each edition.
 
 ## 📦 Choose your edition
@@ -166,7 +165,6 @@ Keep these files together:
 LaptopScreenGuard.pyw
 LaptopScreenGuard.png
 Install-LaptopScreenGuard.cmd
-Update-Existing-Installation.cmd
 Uninstall-LaptopScreenGuard.cmd
 START-HERE.txt
 ```
@@ -291,40 +289,6 @@ Canceling preserves the existing enrollment.
 
 Repeat enrollment separately on every laptop and Windows account.
 
-## 🔄 Update an existing installation
-
-Use the updater when the app and dependencies are already installed.
-
-1. Download and extract the updated edition ZIP.
-2. Choose the matching edition to retain your current mode.
-3. Exit the running app from its tray menu.
-4. Run:
-
-```cmd
-Update-Existing-Installation.cmd
-```
-
-5. Check the tray icon and test the selected trigger.
-
-### What the updater preserves
-
-- Face Only’s existing enrollment and app PIN.
-- Installed dependencies and models.
-
-The previous Python program is backed up as:
-
-```text
-LaptopScreenGuard.pyw.bak
-```
-
-The updater copies the updated program and logo into the installation folder.
-
-> Modes 1–3 share one installation folder. Updating from another phone-edition ZIP changes the installed mode to that edition.
-
-For a fresh laptop, run **Install-LaptopScreenGuard.cmd** instead.
-
-If you customized `CAMERA_INDEX`, carry that setting forward into the updated Python file.
-
 ## 🔁 Switch editions
 
 1. Exit the current edition from its tray menu.
@@ -403,7 +367,6 @@ explorer "%USERPROFILE%\LaptopScreenGuard-Face-Only"
 | `LaptopScreenGuard.log` | Diagnostic log |
 | `owner-face.npz` | Face Only’s local enrollment and PIN-hash data |
 | `venv` | Installed Python environment |
-| `LaptopScreenGuard.pyw.bak` | Previous program saved by the updater |
 
 Do not share `owner-face.npz` or your app PIN.
 
@@ -491,9 +454,9 @@ Use the PIN chosen during face enrollment. It is the application’s PIN, not ne
 ### Old icon still appears
 
 1. Exit the running app.
-2. Apply the update again.
+2. Run `Install-LaptopScreenGuard.cmd` from the extracted edition folder again.
 3. Confirm `LaptopScreenGuard.png` exists beside the installed Python file.
-4. Restart the application.
+4. Restart the application if it is not already running.
 
 ### App does not start after sign-in
 
@@ -563,7 +526,7 @@ Use normal Windows security controls alongside this tool.
 | Location | Contents |
 | --- | --- |
 | `downloads/` | Four installer ZIPs |
-| `src/` | Matching application source, installers, updater scripts and logo |
+| `src/` | Matching application source, installers and logo |
 | `assets/` | Website and README images |
 | `index.html` | Product website |
 | `README.md` | Installation and usage documentation |
