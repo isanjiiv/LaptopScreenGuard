@@ -73,10 +73,10 @@ https://laptopscreenguard.vercel.app/
 
 | Edition | What activates the overlay | Download |
 | --- | --- | --- |
-| **01 — Phone Only** | A phone detected in the webcam’s view | [Download ZIP](downloads/LaptopScreenGuard-01-Phone-Only.zip?raw=true) |
-| **02 — Phone + Shutter** | Phone detection, or a dark, uniform or unavailable webcam feed | [Download ZIP](downloads/LaptopScreenGuard-02-Phone-and-Shutter.zip?raw=true) |
-| **03 — Phone + Shutter + Cover** | Phone and shutter checks, plus blurred or low-detail lens-cover checks | [Download ZIP](downloads/LaptopScreenGuard-03-Phone-Shutter-and-Cover.zip?raw=true) |
-| **04 — Face Only** | No match to the enrolled face for about two seconds | [Download ZIP](downloads/LaptopScreenGuard-04-Face-Only.zip?raw=true) |
+| **01 Phone Only** | A phone detected in the webcam’s view | [Download ZIP](downloads/LaptopScreenGuard-01-Phone-Only.zip?raw=true) |
+| **02 Phone + Shutter** | Phone detection, or a dark, uniform or unavailable webcam feed | [Download ZIP](downloads/LaptopScreenGuard-02-Phone-and-Shutter.zip?raw=true) |
+| **03 Phone + Shutter + Cover** | Phone and shutter checks, plus blurred or low-detail lens-cover checks | [Download ZIP](downloads/LaptopScreenGuard-03-Phone-Shutter-and-Cover.zip?raw=true) |
+| **04 Face Only** | No match to the enrolled face for about two seconds | [Download ZIP](downloads/LaptopScreenGuard-04-Face-Only.zip?raw=true) |
 
 ### Which edition should I choose?
 
