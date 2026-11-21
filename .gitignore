@@ -1,8 +1,24 @@
+# Python environment and cache
+venv/
+.venv/
 __pycache__/
 *.pyc
-venv/
+
+# Logs and temporary files
 *.log
+*.log.*
+*.tmp
 *.lock
-*.onnx
-*.pt
+*.bak
+
+# Private face enrollment data
 owner-face.npz
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Downloaded detection models
+*.pt
+*.onnx
