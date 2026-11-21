@@ -14,6 +14,13 @@ Automatically hide your workspace when your selected privacy trigger is detected
 [![Status](https://img.shields.io/badge/Preview_Release-F47621?style=for-the-badge)](#-testing-before-regular-use)
 
 <br>
+<a href="https://laptopscreenguard.vercel.app/">
+  <img
+    src="assets/laptopscreenguard-infographic.png"
+    alt="LaptopScreenGuard infographic showing four webcam-triggered privacy editions"
+    width="100%"
+  />
+</a>
 
 [![Visit Website](https://img.shields.io/badge/Visit_Website-092647?style=for-the-badge&logo=googlechrome&logoColor=white)](https://laptopscreenguard.vercel.app/)
 [![Downloads](https://img.shields.io/badge/Download-F47621?style=for-the-badge&logo=github&logoColor=white)](#-choose-your-edition)
@@ -36,14 +43,6 @@ Four standalone editions let you choose the behavior that fits your workspace.
 > **Important:** LaptopScreenGuard provides an additional layer of visual privacy. It does not replace Windows account locking or prevent screenshots, screen recording, or all photography.
 
 ## 🖼️ How it works
-
-<a href="https://laptopscreenguard.vercel.app/">
-  <img
-    src="assets/laptopscreenguard-infographic.png"
-    alt="LaptopScreenGuard infographic showing four webcam-triggered privacy editions"
-    width="100%"
-  />
-</a>
 
 1. The app reads frames from your webcam.
 2. Your selected edition checks its privacy trigger.
