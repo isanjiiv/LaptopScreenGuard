@@ -1,84 +1,389 @@
 # LaptopScreenGuard
 
-Webcam privacy for Windows with four selectable editions. The app shows a black overlay and attempts to block keyboard and mouse input while its trigger is active.
+**Your screen. Your space.**
+
+LaptopScreenGuard is a Windows webcam privacy tool that displays a black overlay when your selected trigger is detected. It also attempts to block keyboard and mouse input while the overlay is active.
+
+Choose from four standalone editions: phone detection, phone with shutter monitoring, phone with lens-cover checks, or enrolled-face monitoring.
+
+**Created by [Sanjeev Kumar](https://isanjiiv.github.io/) · IT Engineer**
+
+[Explore the Repository](https://github.com/isanjiiv/LaptopScreenGuard) · [Report an Issue](https://github.com/isanjiiv/LaptopScreenGuard/issues)
+
+---
 
 ## How it works
 
-![Four LaptopScreenGuard modes showing a normal display changing to a black overlay](assets/laptopscreenguard-infographic.png)
+![Four LaptopScreenGuard editions showing a visible workspace changing to a black privacy overlay](assets/laptopscreenguard-infographic.png)
 
-Each edition monitors its selected trigger through the webcam. When the trigger clears, the overlay clears and ordinary keyboard and mouse input is restored. Face Only requires a match with the enrolled face. Camera obstruction can also hide that face and activate its two-second absence rule.
+1. The app monitors its selected trigger through your webcam.
+2. When the trigger becomes active, a black overlay covers the display.
+3. The app attempts to suppress keyboard and mouse input while the overlay is visible.
+4. When the trigger clears, the overlay disappears and ordinary input resumes.
+
+Webcam processing runs locally. After the initial dependency and model downloads, monitoring works offline.
+
+> LaptopScreenGuard is a visual privacy overlay. It does not replace Windows account locking or prevent screenshots, screen recording, or all photography.
+
+## Latest updates
+
+- LaptopScreenGuard branding in the application and system-tray icons.
+- Updated installers that copy the included logo automatically.
+- Live camera preview during Face Only enrollment and replacement.
+- Compact horizontal enrollment window with camera preview on the left and PIN fields and Capture button on the right.
+- Face bounding box and guidance for lighting, distance, blur and multiple faces.
+- An update script for existing installations.
 
 ## Download your edition
 
-| Edition | Trigger | Download |
+| Edition | What activates the overlay | Download |
 | --- | --- | --- |
-| 01-Phone-Only | Phone detected | [Download](downloads/LaptopScreenGuard-01-Phone-Only.zip?raw=true) |
-| 02-Phone-and-Shutter | Phone or dark, uniform or unavailable webcam feed | [Download](downloads/LaptopScreenGuard-02-Phone-and-Shutter.zip?raw=true) |
-| 03-Phone-Shutter-and-Cover | Phone, shutter-like changes or blurred low-detail lens cover | [Download](downloads/LaptopScreenGuard-03-Phone-Shutter-and-Cover.zip?raw=true) |
-| 04-Face-Only | Registered face unmatched for about two seconds | [Download](downloads/LaptopScreenGuard-04-Face-Only.zip?raw=true) |
+| **01 — Phone Only** | A phone detected in the webcam’s view | [Download ZIP](downloads/LaptopScreenGuard-01-Phone-Only.zip?raw=true) |
+| **02 — Phone + Shutter** | A phone, or dark, uniform or unavailable webcam feed | [Download ZIP](downloads/LaptopScreenGuard-02-Phone-and-Shutter.zip?raw=true) |
+| **03 — Phone + Shutter + Cover** | Phone and shutter checks, plus blurred or low-detail lens-cover checks | [Download ZIP](downloads/LaptopScreenGuard-03-Phone-Shutter-and-Cover.zip?raw=true) |
+| **04 — Face Only** | No match to the enrolled face for about two seconds | [Download ZIP](downloads/LaptopScreenGuard-04-Face-Only.zip?raw=true) |
 
-## Install step by step
+**Install one edition at a time for each Windows account.**
 
-1. Install Python 3.12 x64 on Windows 10/11 x64. Enable Add python.exe to PATH if offered. Download from https://www.python.org/downloads/windows/.
-2. Open a fresh CMD and check Python using either command below. Expected version is Python 3.12.x.
+Face Only uses face matching as its trigger. It does not run separate phone, shutter or lens-cover detection rules. Covering the camera can still hide the enrolled face and activate its absence rule.
+
+Shutter and cover checks infer conditions from the camera feed. Lighting and the type of obstruction can affect results.
+
+## Requirements
+
+- Windows 10 or Windows 11, 64-bit.
+- Python 3.12, 64-bit, on an Intel/AMD x64 laptop.
+- A working webcam with camera permissions enabled.
+- Internet access during initial installation.
+- Adequate lighting for face enrollment and matching.
+
+## Install on a new laptop
+
+### 1. Install Python
+
+Download **Python 3.12 x64** from:
+
+https://www.python.org/downloads/windows/
+
+During installation, enable **Add python.exe to PATH** if offered.
+
+Open a new Command Prompt and check:
 
 ```cmd
-python --version
 py -3.12 --version
 ```
 
-3. Download one edition ZIP above and select Extract All. Exit any existing webcam privacy app from its tray menu. To prevent it relaunching, open Win+R, type shell:startup and back up/remove the old startup entry.
-4. In the extracted edition folder, double-click Install-LaptopScreenGuard.cmd under the Windows account that will use the app. Internet is required for initial package and model downloads. Wait for Setup complete.
-5. Open the ^ tray menu near the clock. Hover over LaptopScreenGuard to confirm the edition and camera status. Sign out and sign back in to test automatic startup.
-6. Run only one edition at a time. After initial setup, monitoring works offline.
+Expected output:
 
-## Face Only enrollment and replacement
+```text
+Python 3.12.x
+```
 
-1. Open the shutter and sit alone in good light.
-2. Right-click the tray icon and select Enroll My Face.
-3. Choose and confirm an app PIN of at least six digits. Look at the webcam until Owner face saved appears.
-4. Step away or let another person take your seat. After about two seconds without an owner match, the screen should black out. Return alone to restore it.
-5. Use Replace Enrolled Face and the existing app PIN to register a new face. Repeat enrollment on each laptop/account.
+You can also check:
 
-Face Only uses face matching as its trigger. A shutter or cover can hide the face and trigger the same absence rule. Modes 2 and 3 infer shutter closure from the feed, so an object producing a dark or missing feed can also trigger Mode 2.
+```cmd
+python --version
+```
+
+### 2. Download and extract one edition
+
+Download your preferred ZIP from the table above.
+
+Right-click the ZIP → **Extract All**.
+
+Keep all extracted files together, including:
+
+```text
+LaptopScreenGuard.pyw
+LaptopScreenGuard.png
+Install-LaptopScreenGuard.cmd
+Update-Existing-Installation.cmd
+Uninstall-LaptopScreenGuard.cmd
+START-HERE.txt
+```
+
+Do not run the installer directly from inside the ZIP.
+
+### 3. Run the installer
+
+Exit any older LaptopScreenGuard or PhoneScreenGuard instance first.
+
+Under the Windows account that will use the app, double-click:
+
+```cmd
+Install-LaptopScreenGuard.cmd
+```
+
+Keep the internet connected while dependencies and models download. Wait for **Setup complete**.
+
+The installer starts the app in the background.
+
+### 4. Find the tray icon
+
+Open the hidden-icons arrow near the Windows clock.
+
+Look for the **LaptopScreenGuard laptop-and-shield logo**. Hover over it to check the edition and status.
+
+Right-click the icon to access available controls.
+
+### 5. Complete enrollment if using Face Only
+
+Follow the enrollment steps below.
+
+### 6. Test automatic startup
+
+Sign out and sign back in. Confirm the app starts and appears in the tray.
+
+Startup is configured for the installing Windows account. Other accounts require their own setup.
+
+## Face Only — enroll your face
+
+1. Open your camera shutter.
+2. Sit alone in good light, facing the webcam.
+3. Right-click the LaptopScreenGuard tray icon.
+4. Select **Enroll My Face**.
+5. A compact horizontal enrollment window opens:
+   - **Left:** live mirrored camera preview and face box.
+   - **Right:** PIN fields, Cancel and Capture & Enroll.
+6. Follow the guidance until your face is ready.
+7. Choose and confirm an app PIN containing at least **six digits**.
+8. Click **Capture & Enroll**.
+9. After the success message, the window closes and monitoring resumes.
+
+The overlay and input blocking are temporarily suspended while the enrollment window is open.
+
+### Preview guidance
+
+| Message or condition | What to do |
+| --- | --- |
+| No face detected | Open the shutter and face the camera |
+| More than one face detected | Sit alone in the camera’s view |
+| Move closer | Bring your face closer to the webcam |
+| Keep your whole face inside the preview | Adjust your position |
+| Face too dark | Add light in front of you |
+| Hold still / check focus | Stop moving and let the camera focus |
+| Face ready | Enter your PIN and click Capture & Enroll |
+
+### Replace the enrolled face
+
+1. Right-click the tray icon.
+2. Select **Replace Enrolled Face**.
+3. Enter your **existing app PIN**.
+4. Position the new face in the live preview.
+5. Click **Capture & Enroll**.
+
+Canceling enrollment preserves the existing saved profile.
+
+Repeat enrollment separately on each laptop and Windows account.
+
+## Update an existing installation
+
+Use the update script when the app and its dependencies are already installed.
+
+1. Download and fully extract the updated ZIP.
+2. Choose the edition you want installed. To retain your current mode, select the matching edition.
+3. Exit the running app from its tray menu.
+4. Run:
+
+```cmd
+Update-Existing-Installation.cmd
+```
+
+5. Check the new tray icon and test monitoring.
+
+The updater backs up the previous Python file as:
+
+```text
+LaptopScreenGuard.pyw.bak
+```
+
+For Face Only, the update preserves the existing enrolled-face file and app PIN.
+
+> Modes 1–3 share one installation folder. Updating from a different phone-edition ZIP changes the installed edition to that ZIP’s mode.
+
+For a fresh laptop, use **Install-LaptopScreenGuard.cmd** instead.
 
 ## Test and recover
 
-Test the selected trigger, input blocking during the overlay and input restoration afterwards. Ctrl+Shift+F12 pauses or resumes monitoring. Ctrl+Alt+Delete opens Windows security options if recovery is needed. Signing out may close unsaved work.
+Before regular use, test:
 
-This preview still needs fresh installation, webcam matching and input recovery testing on the target Windows laptop. Webcam face matching may accept a photo or video. Use Win+L to secure the Windows session.
+- Your edition’s detection trigger.
+- Overlay appearance and removal.
+- Keyboard and mouse restoration.
+- Owner matching in Face Only.
+- Automatic startup after sign-in.
+- Processor usage on the target laptop.
 
-## Paths and diagnostic commands
+### Pause or resume monitoring
 
-Modes 1–3 install in %USERPROFILE%\LaptopScreenGuard. Face Only installs in %USERPROFILE%\LaptopScreenGuard-Face-Only. Each is installed for the signed-in Windows account.
+```text
+Ctrl + Shift + F12
+```
 
-For startup errors, open CMD and run the command for your edition. Keep that CMD open during the test.
+### Open Windows security options
+
+```text
+Ctrl + Alt + Delete
+```
+
+### Lock your Windows session
+
+```text
+Windows + L
+```
+
+Use Windows locking when leaving your laptop unattended.
+
+## Installation paths
+
+| Edition | Installed location |
+| --- | --- |
+| Modes 1–3 | `%USERPROFILE%\LaptopScreenGuard` |
+| Face Only | `%USERPROFILE%\LaptopScreenGuard-Face-Only` |
+
+The installation belongs to the signed-in Windows account.
+
+## Diagnostic commands
+
+Exit the existing app before launching a diagnostic instance.
+
+### Modes 1–3
 
 ```cmd
 "%USERPROFILE%\LaptopScreenGuard\venv\Scripts\python.exe" "%USERPROFILE%\LaptopScreenGuard\LaptopScreenGuard.pyw"
 ```
 
+### Face Only
+
 ```cmd
 "%USERPROFILE%\LaptopScreenGuard-Face-Only\venv\Scripts\python.exe" "%USERPROFILE%\LaptopScreenGuard-Face-Only\LaptopScreenGuard.pyw"
 ```
 
-For a background Face Only launch, run:
+Keep Command Prompt open while checking errors.
+
+### Start Face Only in the background
 
 ```cmd
 start "" "%USERPROFILE%\LaptopScreenGuard-Face-Only\venv\Scripts\pythonw.exe" "%USERPROFILE%\LaptopScreenGuard-Face-Only\LaptopScreenGuard.pyw"
 ```
 
-Check LaptopScreenGuard.log in the appropriate installation folder. Verify Windows camera privacy permissions, close other webcam apps and use adequate lighting. The Face Only edition stores a local face embedding and salted app PIN hash. Webcam photos are not saved.
+Check `LaptopScreenGuard.log` in the installation folder for errors.
 
-## Switch, update or uninstall
+## Troubleshooting
 
-Exit the app before running another edition's Install-LaptopScreenGuard.cmd. Carry forward a custom CAMERA_INDEX if you changed it. The renamed app uses new folders and startup entries. Disable the previous app's startup entry and enroll again in Face Only. To remove an edition, exit it and run its Uninstall-LaptopScreenGuard.cmd. Removal also deletes its local face enrollment.
+### Python not found
 
-## Repository files
+Open a fresh Command Prompt after installing Python.
 
-| Folder | Contents |
+Check:
+
+```cmd
+py -3.12 --version
+```
+
+If unavailable, modify or reinstall Python 3.12 x64 and enable its PATH option.
+
+### Camera preview is unavailable
+
+- Open the physical shutter.
+- Enable camera access for desktop apps in Windows Settings.
+- Close other applications using the webcam.
+- Check the camera works in the Windows Camera app.
+- If necessary, adjust `CAMERA_INDEX` in the Python source.
+
+Carry forward a custom camera index when updating the program.
+
+### The old icon still appears
+
+Exit the running app before applying the update.
+
+Confirm `LaptopScreenGuard.png` exists beside the installed Python file. Restart the app and check the tray again.
+
+### Face enrollment does not complete
+
+Use good lighting and show exactly one face. Follow the preview guidance and confirm that both PIN entries match.
+
+For face replacement, use the existing enrollment PIN.
+
+### The app does not start after sign-in
+
+Press **Windows + R** and enter:
+
+```text
+shell:startup
+```
+
+Check for the appropriate LaptopScreenGuard startup entry.
+
+Disable obsolete PhoneScreenGuard or duplicate startup entries so multiple webcam monitors do not launch together.
+
+## Privacy and limitations
+
+- Webcam processing runs locally after setup.
+- Webcam photos are not saved by the app.
+- Face Only stores a local face embedding and salted app PIN hash.
+- Detection depends on lighting, camera quality, processor performance and positioning.
+- Webcam face matching may accept a photo or video.
+- Input suppression is attempted and must be tested on the target system.
+- This is a preview project. Live Windows installation, webcam behavior, tray rendering and recovery require testing on each target laptop.
+
+## Uninstall
+
+1. Exit LaptopScreenGuard from the tray.
+2. Run:
+
+```cmd
+Uninstall-LaptopScreenGuard.cmd
+```
+
+Uninstalling Face Only also removes its local enrollment and PIN data.
+
+## Repository structure
+
+| Location | Contents |
 | --- | --- |
-| downloads/ | Four full installer ZIPs |
-| src/ | Matching source and setup scripts |
+| `downloads/` | Four full installer ZIPs |
+| `src/` | Matching Python source, installers, updater scripts and logo |
+| `assets/` | README and website images |
+| `README.md` | Installation and usage guide |
 
-See GITHUB-UPLOAD.md for repository publishing steps. Dependencies and models retain their own terms. Review https://www.ultralytics.com/license and https://github.com/opencv/opencv_zoo for your distribution requirements.
+## Dependencies
+
+Dependencies and models retain their own licenses and distribution terms.
+
+- [Ultralytics licensing](https://www.ultralytics.com/license)
+- [OpenCV Zoo models](https://github.com/opencv/opencv_zoo)
+
+## Feedback
+
+When reporting an issue, include:
+
+- Windows and Python versions.
+- Edition installed.
+- Steps to reproduce the issue.
+- Relevant log messages.
+
+Do not upload your PIN or `owner-face.npz` enrollment file.
+
+[Open an issue](https://github.com/isanjiiv/LaptopScreenGuard/issues)
+
+---
+
+Built by **[Sanjeev Kumar](https://isanjiiv.github.io/)**.
+
+---
+## 🌐 Connect with the Creator
+
+Created by **[Sanjeev Kumar](https://isanjiiv.github.io/)** — IT Engineer.
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-111111?logo=googlechrome&logoColor=white)](https://isanjiiv.github.io/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/isanjiiv/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/isanjiiv/)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/@isanjiiv)
+[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:sanjeev753304@gmail.com)
+[![X](https://img.shields.io/badge/X-000000?logo=x&logoColor=white)](https://x.com/isanjiiv)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/isanjiiv)
+
+Feedback, testing suggestions and contributions are welcome!
+
+---
