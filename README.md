@@ -22,6 +22,7 @@ Automatically hide your workspace when your selected privacy trigger is detected
   />
 </a>
 
+
 [![Visit Website](https://img.shields.io/badge/Visit_Website-092647?style=for-the-badge&logo=googlechrome&logoColor=white)](https://laptopscreenguard.vercel.app/)
 [![Downloads](https://img.shields.io/badge/Download-F47621?style=for-the-badge&logo=github&logoColor=white)](#-choose-your-edition)
 [![Report an Issue](https://img.shields.io/badge/Report_an_Issue-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/isanjiiv/LaptopScreenGuard/issues)
