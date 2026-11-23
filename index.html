@@ -1553,6 +1553,11 @@
         transform: none;
       }
     }
+  
+    @media (max-width: 850px) {
+      #desktop-shortcut {flex-direction:column; align-items:flex-start;}
+      #desktop-shortcut .pill {max-width:100%; white-space:normal;}
+    }
   </style>
 </head>
 
@@ -2056,6 +2061,19 @@
           <kbd>F12</kbd>
         </div>
       </div>
+
+      <div class="shortcut" id="desktop-shortcut" style="align-items:flex-start;">
+        <div>
+          <strong>Closed the app? Start it from your Desktop.</strong><br>
+          <small>After installing, run the shortcut creator once. Choose 1 for Face Only
+          or 2 for a phone edition. Then double-click the new Desktop shortcut whenever
+          you want to launch the app again—no sign-out required.</small>
+          <small>This download creates a shortcut; it does not install or immediately start
+          the app. If monitoring is only paused, use the tray control or Ctrl + Shift + F12 to resume.</small>
+        </div>
+        <a class="pill" href="downloads/Start-LaptopGuardScreen-App.cmd" download
+           style="flex-shrink:0;">Get shortcut creator</a>
+      </div>
     </section>
 
     <section
@@ -2104,6 +2122,16 @@
     >
       <div class="faq">
         <h2 id="faq-title">Good to know.</h2>
+
+        <details>
+          <summary>Can I reopen the app without signing out?</summary>
+          <p>Yes. Download the <a href="downloads/Start-LaptopGuardScreen-App.cmd" download>Desktop shortcut creator</a>
+          after installing the app. Run it under the same Windows account and select your edition.
+          It creates a Desktop shortcut; double-click that shortcut to launch LaptopScreenGuard again.
+          Saved PIN and enrollment data remain available. If the app is paused instead of exited,
+          resume it from the tray or use Ctrl + Shift + F12.</p>
+        </details>
+
 
         <details id="pin-controls">
           <summary>Which actions require my PIN?</summary>
@@ -2428,3 +2456,4 @@
   </script>
 </body>
 </html>
+

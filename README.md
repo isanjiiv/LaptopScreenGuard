@@ -377,6 +377,46 @@ shell:startup
 
 Back up or remove only the obsolete startup entry.
 
+## 🖥️ Create a Desktop shortcut
+
+Already installed LaptopScreenGuard? Create a Desktop shortcut so you can open it again after choosing Exit, without signing out or reinstalling.
+
+**[Download the Desktop shortcut creator](downloads/Start-LaptopGuardScreen-App.cmd?raw=true)**
+
+### One-time setup
+
+1. Install your preferred edition first.
+2. Download `Start-LaptopGuardScreen-App.cmd` using the link above. If GitHub displays the file, use **Download raw file** to save it.
+3. Run the downloaded file under the same Windows account that installed the app.
+4. Choose your installed edition:
+   - **1:** Face Only.
+   - **2:** Phone Only, Phone + Shutter, or Phone + Shutter + Cover.
+5. Wait for **Desktop shortcut created successfully!**
+
+The script creates a Desktop shortcut with the LaptopScreenGuard logo when the installed logo is available. It does not install the app or launch it immediately.
+
+### Start the app after Exit
+
+Double-click the new Desktop shortcut:
+
+- **LaptopScreenGuard - Face Only** for Face Only.
+- **LaptopScreenGuard** for a phone edition.
+
+The app starts in the background and its tray icon appears. Your saved PIN and face enrollment remain in the installation folder.
+
+### If the app is only paused
+
+Use the tray pause/resume control or `Ctrl + Shift + F12` to resume. Opening another instance does not resume the already running instance.
+
+### If the shortcut cannot be created
+
+- Install the selected edition first.
+- Use the same Windows account that installed it.
+- Confirm the installation folder contains `LaptopScreenGuard.pyw` and `venv\Scripts\pythonw.exe`.
+- Read any error shown in the command window.
+
+The shortcut creator is a separate optional download; it does not need to be inside the four installer ZIPs. Windows shortcut/icon creation still requires testing on the target laptop.
+
 ## ⌨️ Controls and recovery
 
 | Action | Shortcut or control |
@@ -622,7 +662,7 @@ Use normal Windows security controls alongside this tool.
 
 | Location | Contents |
 | --- | --- |
-| `downloads/` | Four PIN-protected installer ZIPs |
+| `downloads/` | Four PIN-protected installer ZIPs and optional Desktop shortcut creator |
 | `assets/` | Website and README images |
 | `index.html` | Product website |
 | `favicon.png` | Website icon |
@@ -697,3 +737,4 @@ Building practical tools through Python, automation and computer vision.
 ⭐ **Found this useful? Give LaptopScreenGuard a star on GitHub!**
 
 </div>
+
