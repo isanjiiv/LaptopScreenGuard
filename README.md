@@ -10,10 +10,11 @@ Automatically hide your workspace when your selected privacy trigger is detected
 
 [![Windows](https://img.shields.io/badge/Windows_10_/_11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](#-requirements)
 [![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](#-installation-on-a-new-laptop)
-[![Processing](https://img.shields.io/badge/Local_Processing-092647?style=for-the-badge)](#-privacy-and-limitations)
+[![PIN Protection](https://img.shields.io/badge/PIN_Protected_Controls-092647?style=for-the-badge)](#-pin-protected-controls)
 [![Status](https://img.shields.io/badge/Preview_Release-F47621?style=for-the-badge)](#-testing-before-regular-use)
 
 <br>
+
 <a href="https://laptopscreenguard.vercel.app/">
   <img
     src="assets/laptopscreenguard-infographic.png"
@@ -21,7 +22,6 @@ Automatically hide your workspace when your selected privacy trigger is detected
     width="100%"
   />
 </a>
-
 
 [![Visit Website](https://img.shields.io/badge/Visit_Website-092647?style=for-the-badge&logo=googlechrome&logoColor=white)](https://laptopscreenguard.vercel.app/)
 [![Downloads](https://img.shields.io/badge/Download-F47621?style=for-the-badge&logo=github&logoColor=white)](#-choose-your-edition)
@@ -39,9 +39,11 @@ The app also attempts to suppress keyboard and mouse input while the overlay is 
 
 Four standalone editions let you choose the behavior that fits your workspace.
 
+The latest packages include PIN-protected Pause and Exit controls, LaptopScreenGuard branding, and a compact live enrollment preview in Face Only.
+
 **Created by [Sanjeev Kumar](https://isanjiiv.github.io/) — IT Engineer.**
 
-> **Important:** LaptopScreenGuard provides an additional layer of visual privacy. It does not replace Windows account locking or prevent screenshots, screen recording, or all photography.
+> **Important:** LaptopScreenGuard provides an additional layer of visual privacy. It does not replace Windows account locking or prevent screenshots, screen recording, or all photography. PIN protection applies to application controls; it does not prevent termination through Task Manager or administrator actions.
 
 ## 🖼️ How it works
 
@@ -63,9 +65,11 @@ https://laptopscreenguard.vercel.app/
 - 🎥 Live face-enrollment preview with positioning guidance.
 - 🖥️ Compact horizontal enrollment window.
 - 🛡️ LaptopScreenGuard application and system-tray branding.
+- 🔑 PIN verification before pausing or exiting.
+- ⌨️ PIN verification when pausing through the keyboard shortcut.
+- ⏱️ A 30-second retry delay after five incorrect control-PIN attempts.
 - ⚙️ Background monitoring and per-account automatic startup.
 - 📴 Offline monitoring after initial setup.
-- ⌨️ Pause/resume keyboard shortcut.
 - 📦 Separate installation packages for each edition.
 
 ## 📦 Choose your edition
@@ -159,21 +163,26 @@ Extract All
 
 Open the extracted folder.
 
-Keep these files together:
+Keep all these files together:
 
 ```text
 LaptopScreenGuard.pyw
 LaptopScreenGuard.png
+control_security.py
 Install-LaptopScreenGuard.cmd
 Uninstall-LaptopScreenGuard.cmd
 START-HERE.txt
 ```
+
+**Do not delete `control_security.py`. The PIN-protected application requires it.**
 
 **Do not run the installer directly from inside the ZIP.**
 
 ### Step 3 — Close older instances
 
 Exit any running LaptopScreenGuard or PhoneScreenGuard instance from its tray menu.
+
+If the existing version has PIN-protected controls, enter its PIN to exit.
 
 Close other webcam privacy applications before proceeding.
 
@@ -199,7 +208,7 @@ The installer will:
 2. Create or reuse the application’s virtual environment.
 3. Install required packages.
 4. Download the edition’s detection models.
-5. Copy the application and logo.
+5. Copy the application, PIN-control module and logo.
 6. Create a startup entry for the current Windows account.
 7. Start LaptopScreenGuard in the background.
 
@@ -209,19 +218,29 @@ Keep the internet connected and wait for:
 Setup complete
 ```
 
-### Step 5 — Find the tray icon
+### Step 5 — Complete PIN setup
+
+**Phone editions — modes 1, 2 and 3:**
+
+1. On the first launch, choose a control PIN containing at least six digits.
+2. Enter it again to confirm.
+3. Keep the PIN safe. It is required for Pause and Exit.
+
+Canceling first-time PIN setup closes the application. Launch it again to complete setup.
+
+**Face Only:**
+
+Enroll your face using the instructions below. The enrollment PIN also protects Pause and Exit.
+
+If a Face Only enrollment already exists, its existing PIN is reused.
+
+### Step 6 — Find the tray icon
 
 Open the hidden-icons arrow near the Windows clock.
 
 Look for the **LaptopScreenGuard laptop-and-shield logo**.
 
 Hover over the icon to see the edition and status. Right-click it to open the available controls.
-
-### Step 6 — Enroll your face if using Face Only
-
-Follow the enrollment instructions below.
-
-The other three editions do not require face enrollment.
 
 ### Step 7 — Confirm startup
 
@@ -230,6 +249,49 @@ Sign out and sign back in.
 Confirm that LaptopScreenGuard starts and appears in the system tray.
 
 > Startup is configured for the installing Windows account. Installing it as an administrator does not automatically configure every standard user account.
+
+## 🔑 PIN-protected controls
+
+| Action | PIN required? |
+| --- | --- |
+| Pause monitoring from the tray | Yes |
+| Pause using `Ctrl + Shift + F12` | Yes |
+| Resume monitoring | No |
+| Exit LaptopScreenGuard from the tray | Yes |
+| Open Face Only enrollment after a face is already enrolled | Yes |
+| Replace an enrolled face | Existing enrollment PIN required |
+| End task through Windows Task Manager | Not protected by the app PIN |
+
+### Which PIN is used?
+
+- **Phone editions:** The control PIN created on first launch.
+- **Face Only:** The PIN created during face enrollment.
+
+This is an application PIN, not necessarily your Windows sign-in PIN.
+
+### Incorrect PIN attempts
+
+- An incorrect PIN cancels the requested action.
+- Canceling the prompt does not authorize Pause or Exit.
+- Five incorrect control-PIN attempts trigger a 30-second retry delay.
+
+The retry delay applies to the control-PIN prompts.
+
+### PIN prompt during an active overlay
+
+Input hooks are temporarily released so you can type into the PIN prompt. An active black overlay remains visible while the trigger remains active.
+
+Monitoring continues. After the prompt closes, normal input suppression can resume if the overlay is still active.
+
+### PIN recovery
+
+This build does not include a PIN-change or PIN-reset interface.
+
+Keep your PIN safe. The PIN hash cannot be used to display your original PIN.
+
+Uninstalling removes installation data, including the saved control PIN or face enrollment. Reinstallation and enrollment may then be required.
+
+> PIN protection is not tamper protection. Task Manager, administrator actions, source edits, uninstalling, or modification of local files can bypass it.
 
 ## 👤 Face Only enrollment
 
@@ -245,6 +307,8 @@ Confirm that LaptopScreenGuard starts and appears in the system tray.
 8. When the face is ready, click **Capture & Enroll**.
 9. Wait for the success message.
 
+Once a face is enrolled, opening the enrollment window requires the existing PIN.
+
 ### Compact enrollment layout
 
 | Left side | Right side |
@@ -256,6 +320,8 @@ Confirm that LaptopScreenGuard starts and appears in the system tray.
 The preview reuses the app’s camera feed.
 
 While the enrollment window is open, the privacy overlay and input blocking are temporarily suspended so you can complete enrollment.
+
+For an existing enrollment, the control PIN is checked before opening this window.
 
 ### Preview guidance
 
@@ -273,9 +339,12 @@ While the enrollment window is open, the privacy overlay and input blocking are 
 
 1. Right-click the tray icon.
 2. Select **Replace Enrolled Face**.
-3. Enter your existing app PIN.
+3. Enter your existing PIN to authorize opening enrollment.
 4. Position the new face in the preview.
-5. Click **Capture & Enroll**.
+5. Enter the existing PIN in the enrollment form.
+6. Click **Capture & Enroll**.
+
+This build checks the PIN before opening enrollment and again when saving the replacement.
 
 Canceling preserves the existing enrollment.
 
@@ -291,12 +360,12 @@ Repeat enrollment separately on every laptop and Windows account.
 
 ## 🔁 Switch editions
 
-1. Exit the current edition from its tray menu.
+1. Exit the current edition from its tray menu using its PIN.
 2. Download and extract the edition you want.
 3. Run its installer.
 4. Ensure only one edition starts after sign-in.
 
-Modes 1–3 share a folder and startup entry.
+Modes 1–3 share a folder, control-PIN file and startup entry. An existing phone-edition control PIN is reused when switching between them.
 
 Face Only uses a separate folder and startup entry. When switching between Face Only and a phone edition, disable the unwanted startup entry to avoid launching both.
 
@@ -312,15 +381,16 @@ Back up or remove only the obsolete startup entry.
 
 | Action | Shortcut or control |
 | --- | --- |
-| Pause/resume monitoring | `Ctrl + Shift + F12` |
+| Pause monitoring | `Ctrl + Shift + F12`, then enter PIN |
+| Resume monitoring | `Ctrl + Shift + F12` |
 | Open Windows security options | `Ctrl + Alt + Delete` |
 | Lock Windows | `Windows + L` |
-| Exit the app | Right-click tray icon → Exit LaptopScreenGuard |
+| Exit the app | Tray → Exit LaptopScreenGuard → enter PIN |
 | Enroll or replace a face | Face Only tray menu |
 
 Use **Windows + L** when leaving your laptop unattended.
 
-Signing out can close unsaved work.
+Windows security options remain available for recovery. Signing out can close unsaved work.
 
 ## 🧪 Testing before regular use
 
@@ -329,13 +399,15 @@ Test on the actual laptop:
 - Selected trigger detection.
 - Overlay appearance and removal.
 - Keyboard and mouse restoration.
+- Correct, incorrect and canceled PIN prompts.
+- Pause through the tray and keyboard shortcut.
+- Exit authorization.
 - Face enrollment and matching.
-- Pause/resume shortcut.
 - Camera disconnection or unavailability.
 - Startup after signing in.
 - Processor usage during normal work.
 
-This is a preview project. Code checks do not replace live Windows and webcam testing.
+Python syntax and PIN-control logic have been checked. Live Windows UI, webcam, overlay and input recovery still require testing on the target laptop.
 
 ## 📂 Installation locations
 
@@ -363,16 +435,18 @@ explorer "%USERPROFILE%\LaptopScreenGuard-Face-Only"
 | File | Purpose |
 | --- | --- |
 | `LaptopScreenGuard.pyw` | Application source |
+| `control_security.py` | PIN verification and protected controls |
 | `LaptopScreenGuard.png` | Application and tray logo |
 | `LaptopScreenGuard.log` | Diagnostic log |
+| `control-pin.json` | Phone editions’ salted control-PIN hash |
 | `owner-face.npz` | Face Only’s local enrollment and PIN-hash data |
 | `venv` | Installed Python environment |
 
-Do not share `owner-face.npz` or your app PIN.
+Do not share your PIN, `control-pin.json`, or `owner-face.npz`.
 
 ## 🛠️ Diagnostic commands
 
-Exit the running app before starting another instance.
+Exit the running app using its PIN before starting another instance.
 
 ### Run a phone edition with visible errors
 
@@ -433,6 +507,18 @@ If unavailable, modify or reinstall Python 3.12 x64 and enable its PATH option.
 - Confirm security software or network filtering is not blocking the required download.
 - Run the installer again after correcting the error.
 
+### An error mentions `control_security`
+
+Keep `control_security.py` beside `LaptopScreenGuard.pyw` in the extracted edition folder.
+
+Run the installer again after closing the app. The installer copies both files into the installation folder.
+
+### Phone edition closes during first-time PIN setup
+
+Canceling setup, entering an invalid PIN, or entering mismatched confirmation closes the app.
+
+Launch the app again and choose and confirm a PIN containing at least six digits.
+
 ### Camera preview is unavailable
 
 - Open the physical shutter.
@@ -449,11 +535,16 @@ Follow the displayed guidance for lighting, distance, positioning or blur.
 
 ### Existing PIN is rejected
 
-Use the PIN chosen during face enrollment. It is the application’s PIN, not necessarily your Windows PIN.
+Use the app PIN for the installed edition:
+
+- Phone editions use the first-launch control PIN.
+- Face Only uses the enrollment PIN.
+
+If the retry delay is active, wait 30 seconds before trying again.
 
 ### Old icon still appears
 
-1. Exit the running app.
+1. Exit the running app using its PIN.
 2. Run `Install-LaptopScreenGuard.cmd` from the extracted edition folder again.
 3. Confirm `LaptopScreenGuard.png` exists beside the installed Python file.
 4. Restart the application if it is not already running.
@@ -472,11 +563,13 @@ Remove obsolete or duplicate entries only after identifying them.
 
 ### Screen remains black
 
-Try:
+Press:
 
 ```text
 Ctrl + Shift + F12
 ```
+
+Enter your app PIN to authorize pausing.
 
 If necessary, use:
 
@@ -494,7 +587,7 @@ Check usage in Task Manager and include your laptop specifications when reportin
 
 ## 🗑️ Uninstall
 
-1. Exit LaptopScreenGuard from the tray.
+1. Exit LaptopScreenGuard from the tray using its PIN.
 2. Open the extracted edition folder.
 3. Run:
 
@@ -504,12 +597,15 @@ Uninstall-LaptopScreenGuard.cmd
 
 The script removes the edition’s startup entry and installation folder.
 
-**Uninstalling Face Only deletes its local face enrollment and PIN data.**
+**Uninstalling deletes that installation’s local PIN data. Uninstalling Face Only also deletes its face enrollment.**
+
+The uninstall script itself is not protected by the application PIN.
 
 ## 🔐 Privacy and limitations
 
 - Webcam processing runs locally after setup.
 - The application does not save webcam photo files.
+- PINs are stored as salted hashes, not plain text.
 - Face Only stores a local face embedding and salted app PIN hash.
 - Lighting, camera quality, positioning and processor performance affect results.
 - Face matching may accept photos or videos.
@@ -518,6 +614,7 @@ The script removes the edition’s startup entry and installation folder.
 - Input suppression is attempted and must be tested on each laptop.
 - The overlay is not a Windows security boundary.
 - It does not prevent screenshots or screen recording.
+- The app PIN does not block Task Manager termination, uninstalling, administrator actions or changes to local program files.
 
 Use normal Windows security controls alongside this tool.
 
@@ -525,11 +622,16 @@ Use normal Windows security controls alongside this tool.
 
 | Location | Contents |
 | --- | --- |
-| `downloads/` | Four installer ZIPs |
-| `src/` | Matching application source, installers and logo |
+| `downloads/` | Four PIN-protected installer ZIPs |
 | `assets/` | Website and README images |
 | `index.html` | Product website |
+| `favicon.png` | Website icon |
 | `README.md` | Installation and usage documentation |
+| `src/` — optional | Unpacked source matching the downloadable packages |
+
+A separate `src/` folder is not required to install the app from the ZIPs or host the static website.
+
+Each installer ZIP already includes its Python source and setup files. If `src/` is maintained, keep it synchronized with the downloadable editions.
 
 ## 📜 Dependencies
 
@@ -550,7 +652,7 @@ Include:
 - Steps to reproduce the problem.
 - Relevant log messages.
 
-Do not upload your PIN or enrollment file.
+Do not upload your PIN, control-PIN file or enrollment file.
 
 [Open an issue](https://github.com/isanjiiv/LaptopScreenGuard/issues)
 
