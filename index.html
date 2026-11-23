@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Explore LaptopScreenGuard, a Windows webcam privacy tool with phone detection, shutter, lens cover and enrolled-face editions. Created by Sanjeev Kumar."
+    content="Explore four LaptopScreenGuard webcam privacy editions for Windows, with PIN-protected Pause and Exit controls and live face enrollment. Created by Sanjeev Kumar."
   >
   <meta name="author" content="Sanjeev Kumar">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -22,7 +22,7 @@
   >
   <meta
     property="og:description"
-    content="Four webcam-triggered screen privacy editions for Windows. Built by Sanjeev Kumar."
+    content="Four Windows webcam privacy editions with PIN-protected controls and live face enrollment. Built by Sanjeev Kumar."
   >
   <meta
     property="og:image"
@@ -40,7 +40,7 @@
   >
   <meta
     name="twitter:description"
-    content="Webcam-triggered screen privacy for Windows, created by Sanjeev Kumar."
+    content="Webcam-triggered Windows screen privacy with PIN-protected controls, created by Sanjeev Kumar."
   >
   <meta
     name="twitter:image"
@@ -55,7 +55,8 @@
     rel="stylesheet"
   >
 
-  <!-- Add a canonical link here when your final website URL is confirmed. -->
+  <link rel="canonical" href="https://laptopscreenguard.vercel.app/">
+  <meta property="og:url" content="https://laptopscreenguard.vercel.app/">
 
   <script type="application/ld+json">
   {
@@ -1617,7 +1618,7 @@
       </div>
 
       <p class="compat">
-        Windows 10 / 11 x64 · Python 3.12 · Preview build
+        Windows 10 / 11 x64 · Python 3.12 · PIN-protected controls · Preview build
       </p>
 
       <div class="product">
@@ -1838,9 +1839,9 @@
           </h2>
 
           <p>
-            Four standalone editions. Each download includes
-            the app, installer, removal script and a step-by-step
-            guide.
+            Four standalone editions with PIN-protected controls. Each ZIP includes
+            the app, PIN-control module, logo, installer, removal script
+            and a step-by-step guide.
           </p>
         </div>
 
@@ -1965,6 +1966,15 @@
           </article>
         </div>
 
+
+      <div class="shortcut" style="align-items:flex-start; margin-bottom:0;">
+        <div>
+          <strong>Privacy controls. Protected by your PIN.</strong><br>
+          <small>Pause and Exit require your app PIN. Face Only reuses its enrollment PIN.</small>
+        </div>
+        <a class="link" href="#pin-controls" style="flex-shrink:0;">How PIN protection works</a>
+      </div>
+
         <p class="subnote">
           Windows 10/11 x64 and Python 3.12 x64 required.
           Install one edition per account at a time.
@@ -2012,9 +2022,9 @@
           <h3>One setup script.</h3>
 
           <p>
-            Run <strong>Install-LaptopScreenGuard.cmd</strong>.
-            Keep internet connected for the initial packages and
-            model downloads.
+            Keep all extracted files together, including <strong>control_security.py</strong>.
+            Run <strong>Install-LaptopScreenGuard.cmd</strong> under your Windows account.
+            Internet is required for initial packages and model downloads.
           </p>
         </div>
 
@@ -2023,10 +2033,9 @@
           <h3>Make it yours.</h3>
 
           <p>
-            For Face Only, choose <strong>Enroll My Face</strong>
-            from the tray menu. Set your app PIN and look at
-            the camera. Use <strong>Replace Enrolled Face</strong>
-            to update it.
+            Phone editions ask you to choose and confirm a six-digit-or-longer
+            control PIN on first launch. In Face Only, choose <strong>Enroll My Face</strong>,
+            use the compact live preview, set your PIN and click <strong>Capture &amp; Enroll</strong>.
           </p>
         </div>
       </div>
@@ -2035,7 +2044,7 @@
         <div>
           A shortcut when you need control.<br>
           <small>
-            Pause or resume monitoring, including under the overlay.
+            Pause requires your app PIN. Resume does not require a PIN.
           </small>
         </div>
 
@@ -2096,6 +2105,43 @@
       <div class="faq">
         <h2 id="faq-title">Good to know.</h2>
 
+        <details id="pin-controls">
+          <summary>Which actions require my PIN?</summary>
+          <p>Pause and Exit require your app PIN, including pausing through Ctrl + Shift + F12.
+          Resuming monitoring does not require a PIN. Phone editions use the control PIN set
+          on first launch. Face Only uses its enrollment PIN. Once a face is enrolled,
+          opening the enrollment preview also requires that PIN.</p>
+        </details>
+        <details>
+          <summary>How do I set up or replace my enrolled face?</summary>
+          <p>Choose Enroll My Face from the Face Only tray menu. The compact horizontal window
+          shows your live camera preview on the left and PIN fields and Capture &amp; Enroll
+          on the right. Follow the guidance until one suitable face is detected, then capture.
+          Replace Enrolled Face requires the existing PIN before opening the preview and
+          again when saving. Each laptop and Windows account needs its own enrollment.</p>
+        </details>
+        <details>
+          <summary>What happens after an incorrect PIN?</summary>
+          <p>An incorrect or canceled PIN prompt does not authorize Pause or Exit.
+          Five incorrect control-PIN attempts cause a 30-second retry delay.
+          While typing a PIN, input hooks are temporarily released; an active black overlay
+          remains visible while the trigger is active. Monitoring continues.</p>
+        </details>
+        <details>
+          <summary>Does the PIN block End task in Task Manager?</summary>
+          <p>No. The PIN protects the app’s own controls. It does not stop Task Manager,
+          administrator actions, uninstalling or modifications to local files.
+          Use Windows + L to lock your Windows session when leaving the laptop.</p>
+        </details>
+        <details>
+          <summary>Can I change or reset a forgotten PIN?</summary>
+          <p>This preview has no PIN-change or PIN-reset interface. Keep your PIN safe.
+          Phone editions store a salted PIN hash; Face Only stores its PIN hash with the
+          local face embedding. Uninstall removes that installation’s saved PIN and enrollment
+          data. Never share control-pin.json or owner-face.npz.</p>
+        </details>
+
+
         <details>
           <summary>Does it work offline?</summary>
 
@@ -2143,11 +2189,11 @@
           <summary>How do I recover or uninstall?</summary>
 
           <p>
-            Use Ctrl + Shift + F12 to pause monitoring.
-            Ctrl + Alt + Delete opens Windows security options
-            if needed. To remove the app, exit from the tray
-            and run Uninstall-LaptopScreenGuard.cmd in your
-            extracted edition folder.
+            Press Ctrl + Shift + F12 and enter your app PIN to pause monitoring.
+            Ctrl + Alt + Delete remains available for Windows recovery.
+            To uninstall, exit from the tray using your PIN, then run
+            Uninstall-LaptopScreenGuard.cmd. Uninstall removes local PIN data
+            and any face enrollment. The uninstall script itself is not PIN-protected.
           </p>
         </details>
 
@@ -2156,8 +2202,8 @@
 
           <p>
             This is a preview build. Test your edition’s triggers,
-            face matching where applicable, keyboard and mouse
-            recovery, startup and CPU usage on the target laptop.
+            face matching where applicable, correct/incorrect/canceled PIN prompts,
+            keyboard and mouse recovery, startup and CPU usage on the target laptop.
             Lighting, partial lens covers and camera availability
             can affect results.
           </p>
